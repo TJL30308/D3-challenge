@@ -6,3 +6,12 @@ body{
 text{
     font-family: tahoma;
 }
+
+.jumbotron{
+    background-color: aquamarine;
+}
+
+.footer{
+    background-color: blueviolet;
+
+}
