@@ -41,9 +41,6 @@ function makeResponsive() {
             data.obesity = + data.obesity;
         });
     
-        console.log(data.income);
-        console.log(data.obesity);
-    
         // Create scale functions
         var xLinearScale = d3.scaleLinear()
             .domain([20, d3.max(data, d => d.income)])
@@ -88,7 +85,7 @@ function makeResponsive() {
         chartGroup.append("text")
             .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
             .attr("class", "axisText")
-            .text("Average Annual Income ($USD)");
+            .text("Average Annual Income (USD)");
     
     }).catch(function(error) {
         console.log(error);
