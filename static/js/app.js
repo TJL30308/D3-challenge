@@ -8,14 +8,13 @@ function makeResponsive() {
         svgArea.remove();
         }
 
-    var svgWidth = window.innerWidth;
-    var svgHeight = window.innerHeight;
+    var svgWidth = 960; // window.innerWidth did not work
+    var svgHeight = 500; // window.innerHeight did not work
       
-
     var margin = {
-        top: 20,
-        right: 40,
-        bottom: 60,
+        top: 50,
+        right: 100,
+        bottom: 50,
         left: 100
     };
 
@@ -25,7 +24,6 @@ function makeResponsive() {
     // Create an SVG wrapper, append an SVG group that will hold our chart, and shift the latter by left and top margins.
     var svg = d3.select("#scatter")
         .append("svg")
-        // .attr("viewBox", "0 0 100 100");
         .attr("width", svgWidth)
         .attr("height", svgHeight);
 
@@ -35,12 +33,12 @@ function makeResponsive() {
     // read in CSV and console log check
     d3.csv("static/data/data.csv").then(function(data) {
         
-        console.log(data);
+        // console.log(data);
 
         // Parse through data
         data.forEach(function(data) { 
             data.income = +data.income;
-            data.obesity = + data.obesity;
+            data.obesity = +data.obesity;
         });
     
         // Create scale functions
@@ -88,6 +86,23 @@ function makeResponsive() {
             .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
             .attr("class", "axisText")
             .text("Average Annual Income (USD)");
+
+        // Initialize ToolTip
+
+        var toolTip = d3.tip()
+            .attr("class", "tooltip")
+            .html(function(d) {
+                return(`${d.abbr}`);
+            });
+        
+        chartGroup.call(toolTip);
+
+        circleGroup.on("mouseover", function(data) {
+            toolTip.show(data, this);
+            })
+            .on("mouseout", function(data, index) {
+                toolTip.hide(data);
+            });
     
     }).catch(function(error) {
         console.log(error);
