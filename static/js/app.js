@@ -3,13 +3,14 @@ function makeResponsive() {
 
     var svgArea = d3.select("body").select("svg");
 
-  // clear svg is not empty
-  if (!svgArea.empty()) {
-    svgArea.remove();
-  }
+    // clear svg is not empty
+    if (!svgArea.empty()) {
+        svgArea.remove();
+        }
 
-    var svgWidth = 900;
-    var svgHeight = 400;
+    var svgWidth = window.innerWidth;
+    var svgHeight = window.innerHeight;
+      
 
     var margin = {
         top: 20,
@@ -24,6 +25,7 @@ function makeResponsive() {
     // Create an SVG wrapper, append an SVG group that will hold our chart, and shift the latter by left and top margins.
     var svg = d3.select("#scatter")
         .append("svg")
+        // .attr("viewBox", "0 0 100 100");
         .attr("width", svgWidth)
         .attr("height", svgHeight);
 
