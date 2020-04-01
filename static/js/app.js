@@ -1,5 +1,5 @@
 function makeResponsive() {
-    
+
     var svgWidth = 960;
     var svgHeight = 500;
 
@@ -17,7 +17,7 @@ function makeResponsive() {
                 .append("svg")
                 .attr(width, svgWidth)
                 .attr(height, svgHeight);
-
+        
     // read in CSV and console log check
     d3.csv("static/data/data.csv").then(data => console.log(data));
 
