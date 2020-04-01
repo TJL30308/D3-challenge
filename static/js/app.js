@@ -8,8 +8,8 @@ function makeResponsive() {
     svgArea.remove();
   }
 
-    var svgWidth = 1200;
-    var svgHeight = 600;
+    var svgWidth = window.innerWidth;
+    var svgHeight = window.innerHeight;
 
     var margin = {
         top: 20,
@@ -33,7 +33,7 @@ function makeResponsive() {
     // read in CSV and console log check
     d3.csv("static/data/data.csv").then(function(data) {
         
-        console.log(data)
+        console.log(data);
 
         // Parse through data
         data.forEach(function(data) { 
