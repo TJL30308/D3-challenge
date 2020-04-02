@@ -99,7 +99,6 @@ function makeResponsive() {
 
 
         // Initialize ToolTip
-
         var toolTip = d3.tip()
             .attr("class", "tooltip")
             .html(function(d) {
