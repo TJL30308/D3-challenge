@@ -22,6 +22,7 @@ function makeResponsive() {
     var height = svgHeight - margin.top - margin.bottom;
 
     // Create an SVG wrapper, append an SVG group that will hold our chart, and shift the latter by left and top margins.
+    
     var svg = d3.select("#scatter")
         .append("svg")
         .attr("width", svgWidth)
@@ -83,9 +84,19 @@ function makeResponsive() {
             .text("Rate of Obesity (% of Population)");
 
         chartGroup.append("text")
-            .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
+            .attr("transform", `translate(${width / 2.5}, ${height + 40})`)
             .attr("class", "axisText")
             .text("Average Annual Income (USD)");
+       
+        // create title label
+        chartGroup.append("text")
+            .attr("x", (width / 2))             
+            .attr("y", 0 - (margin.top / 2))
+            .attr("text-anchor", "middle")  
+            .style("font-size", "25px") 
+            .style("text-decoration", "underline")  
+            .text("Obesity vs Income");
+
 
         // Initialize ToolTip
 
