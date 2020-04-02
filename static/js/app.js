@@ -8,7 +8,7 @@ function makeResponsive() {
         svgArea.remove();
         }
 
-    var svgWidth = window.innerWidth - 200; // resize to window width minus 200 for better visualization
+    var svgWidth = window.innerWidth - 150; // resize to window width minus 150 for better visualization
     var svgHeight = window.innerHeight; // resize to window height
       
     var margin = {
@@ -103,7 +103,7 @@ function makeResponsive() {
         var toolTip = d3.tip()
             .attr("class", "tooltip")
             .html(function(d) {
-                return(`${d.abbr}`);
+                return(`${d.abbr} ${d.obesity}%`);
             });
         
         chartGroup.call(toolTip);

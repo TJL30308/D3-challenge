@@ -11,19 +11,3 @@ body {
 footer{
   background-color:	#F8F8F8;
 }
-
-@media screen and (max-width: 530px) {
-  .stateText {
-    display: none;
-  }
-
-  .aText {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .aText {
-    font-size: 13px;
-  }
-}
