@@ -43,7 +43,7 @@ function makeResponsive() {
     
         // Create scale functions
         var xLinearScale = d3.scaleLinear()
-            .domain([35000, d3.max(data, d => d.income)])
+            .domain([35000, (d3.max(data, d => d.income) + 5000)])
             .range([0, width]);
     
         var yLinearScale = d3.scaleLinear()
