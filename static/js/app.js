@@ -8,8 +8,8 @@ function makeResponsive() {
         svgArea.remove();
         }
 
-    var svgWidth = 960; // window.innerWidth did not work
-    var svgHeight = 500; // window.innerHeight did not work
+    var svgWidth = 900; // window.innerWidth did not work
+    var svgHeight = 450; // window.innerHeight did not work
       
     var margin = {
         top: 50,
@@ -43,11 +43,11 @@ function makeResponsive() {
     
         // Create scale functions
         var xLinearScale = d3.scaleLinear()
-            .domain([20, d3.max(data, d => d.income)])
+            .domain([35000, d3.max(data, d => d.income)])
             .range([0, width]);
     
         var yLinearScale = d3.scaleLinear()
-            .domain([0, d3.max(data, d => d.obesity)])
+            .domain([15, (d3.max(data, d => d.obesity) + 5)])
             .range([height, 0]);
 
         // Create axis functions
