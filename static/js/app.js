@@ -7,15 +7,15 @@ function makeResponsive() {
     if (!svgArea.empty()) {
         svgArea.remove();
         }
-
+    
     var svgWidth = window.innerWidth - 150; // resize to window width minus 150 for better visualization
     var svgHeight = window.innerHeight; // resize to window height
       
     var margin = {
         top: 50,
-        right: 100,
+        right: 150,
         bottom: 50,
-        left: 100
+        left: 150
     };
 
     var width = svgWidth - margin.left - margin.right;
